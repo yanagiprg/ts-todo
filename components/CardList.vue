@@ -5,8 +5,8 @@
         <Card
           v-for="(card, index) in cardList"
           :key="index"
-          :title="title"
-          :subtitle="subtitle"
+          :title="card.title"
+          :subtitle="card.subtitle"
         ></Card>
       </v-col>
     </v-row>
@@ -19,5 +19,7 @@ import { Vue, Prop, Component } from 'nuxt-property-decorator'
 @Component({})
 export default class CardList extends Vue {
   @Prop({ default: [], type: Array }) readonly cardList!: String[]
+  @Prop({ default: '', type: String }) title!: String
+  @Prop({ default: '', type: String }) subtitle!: String
 }
 </script>
