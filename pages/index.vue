@@ -4,7 +4,7 @@
       <div class="mt-4 mb-8 text-center">
         <div class="text-h4 title-text font-weight-bold">Todo App</div>
       </div>
-      <Card title="A" subtitle="aaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
+      <CardList />
     </v-col>
   </v-row>
 </template>
