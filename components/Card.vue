@@ -12,7 +12,9 @@
     </v-list-item>
 
     <v-card-actions>
-      <v-btn elevation="2" text class="ml-2 mb-3"> delete </v-btn>
+      <v-btn elevation="2" text class="ml-2 mb-3" @click="deleteCard">
+        delete
+      </v-btn>
     </v-card-actions>
   </v-card>
 </template>
@@ -27,5 +29,9 @@ export default class Card extends Vue {
 
   @Prop({ default: '', type: String })
   subtitle!: String
+
+  deleteCard(index: number) {
+    this.$emit('submit', index)
+  }
 }
 </script>
