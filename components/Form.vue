@@ -32,7 +32,7 @@ export default class Form extends Vue {
       title: this.title,
       subtitle: this.subtitle,
     }
-    this.$emit('submit', payload)
+    this.$emit('add', payload)
     this.resetForm()
   }
 

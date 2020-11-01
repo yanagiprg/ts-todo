@@ -5,8 +5,8 @@
         <div class="text-h4 title-text font-weight-bold">Todo App</div>
       </div>
       <v-col cols="12" class="px-4">
-        <Form @submit="addCard" />
-        <CardList :card-list="cardList" @submit="deleteCard" />
+        <Form @add="addCard" />
+        <CardList :card-list="cardList" @delete="deleteCard" @show="showCard" />
       </v-col>
     </v-col>
   </v-row>
@@ -15,7 +15,7 @@
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
 @Component
-export default class todo extends Vue {
+export default class Todo extends Vue {
   cardList: Object[] = []
 
   addCard(card: Object) {
@@ -24,6 +24,11 @@ export default class todo extends Vue {
 
   deleteCard(index: number) {
     this.cardList.splice(index, 1)
+  }
+
+  showCard(index: number) {
+    this.$router.push(`/cards/${this.cardList[index]}`)
+    console.log(this.cardList[index], 2)
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <v-card elevation="3" class="mx-auto mb-4" max-width="320" outlined>
-    <v-list-item three-line>
+    <v-list-item three-line @click="showCard">
       <v-list-item-content>
         <v-list-item-title class="headline ml-4">
           {{ title }}
@@ -31,7 +31,11 @@ export default class Card extends Vue {
   subtitle!: String
 
   deleteCard(index: number) {
-    this.$emit('submit', index)
+    this.$emit('delete', index)
+  }
+
+  showCard(index: number) {
+    this.$emit('show', index)
   }
 }
 </script>

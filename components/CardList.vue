@@ -7,7 +7,8 @@
           :key="index"
           :title="card.title"
           :subtitle="card.subtitle"
-          @submit="deleteCard"
+          @delete="deleteCard"
+          @show="showCard(index)"
         ></Card>
       </v-col>
     </v-row>
@@ -22,8 +23,15 @@ export default class CardList extends Vue {
   @Prop({ default: [], type: Array }) readonly cardList!: String[]
   @Prop({ default: '', type: String }) title!: String
   @Prop({ default: '', type: String }) subtitle!: String
+  @Prop({ default: '', type: String }) id!: String
+
   deleteCard(index: number) {
-    this.$emit('submit', index)
+    this.$emit('delete', index)
+  }
+
+  showCard(index: number) {
+    this.$emit('show', index)
+    // console.log(this.cardList[index].id, index, 1)
   }
 }
 </script>
