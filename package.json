@@ -13,7 +13,10 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
     "@nuxtjs/pwa": "^3.0.2",
+    "@types/firebase": "^3.2.1",
     "core-js": "^3.6.5",
+    "firebase": "^8.0.0",
+    "firebase-tools": "^8.14.1",
     "nuxt": "^2.14.6",
     "nuxt-property-decorator": "^2.8.8"
   },
